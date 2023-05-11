@@ -1,0 +1,28 @@
+---
+title: "Stocks"
+author: "Rochelle Rafn"
+format:
+  html: 
+    code-fold: true
+    code-summary: "Show Code"
+---
+
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(Quandl)
+library(devtools)
+library(tidyquant)
+library(ggplot2)
+library(gt)
+```
+
+
+```{r}
+SP500 <- tq_index("SP500") %>%
+  tq_get(get = "stock.prices")
+
+str(SP500)
+```
+
+
